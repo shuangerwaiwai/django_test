@@ -1,0 +1,11 @@
+<p>
+    <a herf="{% url 'learning_logs:index' %}">Learning Log</a>
+    <a herf="{% url 'learning_logs:topics' %}">Topics</a>
+    {% if user.is_authenticated %}
+        Hello, {{ user.username }}.
+        <a href="{% url 'users:logout' %}">logout</a>
+    {% else %}
+        <a herf="{% url 'users:login' %}">login</a>
+    {% endif %}
+</p>
+{% block content %}{% endblock content %}
